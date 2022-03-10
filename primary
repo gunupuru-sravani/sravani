@@ -1,0 +1,78 @@
+SQL*Plus: Release 10.2.0.1.0 - Production on Wed Mar 9 19:43:51 2022
+
+Copyright (c) 1982, 2005, Oracle.  All rights reserved.
+
+SQL> connect
+Enter user-name: system
+Enter password:
+Connected.
+SQL> create table university(regid number(10) primary key,sname varchar2(10),gender char(10),year number(10),collname varchar2(20));
+
+Table created.
+
+SQL> insert into university(regid,sname,gender,year,collname)values(&id,'&name','&gender',&year,'&collname');
+Enter value for id: 1
+Enter value for name:chaithu
+Enter value for gender: female
+Enter value for year: 2000
+Enter value for collname: aditya
+old   1: insert into university(regid,sname,gender,year,collname)values(&id,'&name','&gender',&year,'&collname')
+new   1: insert into university(regid,sname,gender,year,collname)values(1,'chaithu','female',2000,'aditya')
+
+1 row created.
+
+SQL> /
+Enter value for id: 2
+Enter value for name: jaya
+Enter value for gender: female
+Enter value for year: 2000
+Enter value for collname: viveka college
+old   1: insert into university(regid,sname,gender,year,collname)values(&id,'&name','&gender',&year,'&collname')
+new   1: insert into university(regid,sname,gender,year,collname)values(2,'jaya','female',2000,'viveka college')
+
+1 row created.
+
+SQL> /
+Enter value for id: 3
+Enter value for name: raji
+Enter value for gender: female
+Enter value for year: 2001
+Enter value for collname: narayana
+old   1: insert into university(regid,sname,gender,year,collname)values(&id,'&name','&gender',&year,'&collname')
+new   1: insert into university(regid,sname,gender,year,collname)values(3,'raji','female',2001,'narayana')
+
+1 row created.
+
+SQL> /
+Enter value for id: 4
+Enter value for name: babblu
+Enter value for gender: male
+Enter value for year: 2001
+Enter value for collname: samhitha
+old   1: insert into university(regid,sname,gender,year,collname)values(&id,'&name','&gender',&year,'&collname')
+new   1: insert into university(regid,sname,gender,year,collname)values(4,'babblu','male',2001,'samhitha')
+
+1 row created.
+
+SQL> /
+Enter value for id: 5
+Enter value for name: chinnu
+Enter value for gender: female
+Enter value for year: 2000
+Enter value for collname: sri chaithanya
+old   1: insert into university(regid,sname,gender,year,collname)values(&id,'&name','&gender',&year,'&collname')
+new   1: insert into university(regid,sname,gender,year,collname)values(5,'chinnu','female',2000,'sri chaithanya')
+
+1 row created.
+
+SQL> select * from university;
+
+     REGID SNAME      GENDER           YEAR COLLNAME
+---------- ---------- ---------- ---------- --------------------
+         1 chaithu    female           2000 aditya
+         2 jaya       female           2000 viveka college
+         3 raji       female           2001 narayana
+         4 babblu     male             2001 samhitha
+         5 chinnu     female           2000 sri chaithanya
+
+SQL>
